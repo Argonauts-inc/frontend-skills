@@ -4,15 +4,15 @@
 
 ```bash
 # Vite + React + TypeScript
-pnpm create vite@latest my-app -- --template react-ts
+bun create vite@latest my-app -- --template react-ts
 cd my-app
-pnpm install
+bun install
 
 # Tailwind CSS v4
-pnpm add tailwindcss @tailwindcss/vite
+bun add tailwindcss @tailwindcss/vite
 
 # shadcn/ui のセットアップ
-pnpm dlx shadcn@latest init
+bunx shadcn@latest init
 ```
 
 ## ディレクトリ構成
@@ -65,8 +65,8 @@ export default defineConfig({
 TanStack Router は型安全なルーティングを提供し、SPA に最適:
 
 ```bash
-pnpm add @tanstack/react-router
-pnpm add -D @tanstack/router-plugin @tanstack/router-devtools
+bun add @tanstack/react-router
+bun add -d @tanstack/router-plugin @tanstack/router-devtools
 ```
 
 ```typescript
@@ -133,7 +133,7 @@ createRoot(document.getElementById("root")!).render(
 ### React Router v6 (代替)
 
 ```bash
-pnpm add react-router-dom
+bun add react-router-dom
 ```
 
 ```tsx

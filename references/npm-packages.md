@@ -2,11 +2,13 @@
 
 ## パッケージマネージャー
 
-**pnpm を推奨** (高速、ディスク効率、ワークスペース対応):
+**bun を使用する** (高速、Node.js 互換、ビルトインバンドラー):
 
 ```bash
-# pnpm のインストール
-npm install -g pnpm
+# bun のインストール
+curl -fsSL https://bun.sh/install | bash
+# または
+brew install bun
 ```
 
 ---
@@ -22,7 +24,7 @@ npm install -g pnpm
 
 ```bash
 # Next.js プロジェクト
-pnpm create next-app@latest my-app --typescript --app --no-eslint
+bun create next-app@latest my-app --typescript --app --no-eslint
 ```
 
 ---
@@ -37,11 +39,11 @@ pnpm create next-app@latest my-app --typescript --app --no-eslint
 | `clsx` | latest | 条件付きクラス名生成 |
 
 ```bash
-pnpm add tailwindcss tailwind-merge clsx
+bun add tailwindcss tailwind-merge clsx
 # Next.js の場合
-pnpm add @tailwindcss/postcss
+bun add @tailwindcss/postcss
 # Vite の場合
-pnpm add @tailwindcss/vite
+bun add @tailwindcss/vite
 ```
 
 > **注意**: Tailwind CSS v4 は v3 と破壊的変更あり。詳細は [tailwind-shadcn.md](tailwind-shadcn.md) を参照
@@ -59,11 +61,11 @@ pnpm add @tailwindcss/vite
 
 ```bash
 # shadcn/ui 初期化
-pnpm dlx shadcn@latest init
+bunx shadcn@latest init
 
 # コンポーネント追加
-pnpm dlx shadcn@latest add button
-pnpm dlx shadcn@latest add input form card dialog
+bunx shadcn@latest add button
+bunx shadcn@latest add input form card dialog
 ```
 
 ---
@@ -77,7 +79,7 @@ pnpm dlx shadcn@latest add input form card dialog
 | `@hookform/resolvers` | latest | zod と react-hook-form の統合 |
 
 ```bash
-pnpm add react-hook-form zod @hookform/resolvers
+bun add react-hook-form zod @hookform/resolvers
 ```
 
 ---
@@ -93,14 +95,14 @@ pnpm add react-hook-form zod @hookform/resolvers
 
 ```bash
 # SWR (デフォルト)
-pnpm add swr
+bun add swr
 
 # gRPC-connect (必要な場合)
-pnpm add @connectrpc/connect @connectrpc/connect-web @bufbuild/protobuf
-pnpm add -D @bufbuild/buf @connectrpc/protoc-gen-connect-es @bufbuild/protoc-gen-es
+bun add @connectrpc/connect @connectrpc/connect-web @bufbuild/protobuf
+bun add -d @bufbuild/buf @connectrpc/protoc-gen-connect-es @bufbuild/protoc-gen-es
 
 # OpenAPI (必要な場合)
-pnpm add -D orval
+bun add -d orval
 ```
 
 ---
@@ -114,10 +116,10 @@ pnpm add -D orval
 
 ```bash
 # 軽量な場合
-pnpm add jotai
+bun add jotai
 
 # 複雑な場合
-pnpm add zustand
+bun add zustand
 ```
 
 > 選択ガイドは [state-management.md](state-management.md) を参照
@@ -131,7 +133,7 @@ pnpm add zustand
 | `date-fns` | `^4.x` | 日付操作 (モジュラー設計でバンドルサイズ最小) |
 
 ```bash
-pnpm add date-fns
+bun add date-fns
 ```
 
 > `dayjs` も選択肢だが、`date-fns` を優先する (TypeScript サポートが優れている)
@@ -146,8 +148,8 @@ pnpm add date-fns
 
 ```bash
 # Biome のインストールと初期化
-pnpm add -D @biomejs/biome
-pnpm biome init
+bun add -d @biomejs/biome
+bunx biome init
 ```
 
 > **ESLint / Prettier は使用しない**。Biome に統一する。
@@ -166,7 +168,7 @@ pnpm biome init
 | `jsdom` | latest | ブラウザ環境シミュレーション |
 
 ```bash
-pnpm add -D vitest @testing-library/react @testing-library/user-event @vitejs/plugin-react jsdom
+bun add -d vitest @testing-library/react @testing-library/user-event @vitejs/plugin-react jsdom
 ```
 
 ```typescript
@@ -189,16 +191,16 @@ export default defineConfig({
 ## パッケージバージョン管理方針
 
 - **latest 指定は避ける**: `^` (互換バージョン) で指定
-- **lockfile をコミット**: `pnpm-lock.yaml` は必ずコミットする
-- **定期的な更新**: `pnpm update --interactive` で依存関係を確認
+- **lockfile をコミット**: `bun.lock` は必ずコミットする
+- **定期的な更新**: `bun update` で依存関係を確認
 - **peer dependencies**: shadcn/ui の依存関係は自動管理に任せる
 
 ```bash
 # 依存関係の更新確認
-pnpm update --interactive --latest
+bun update
 
 # セキュリティ監査
-pnpm audit
+bun pm audit
 ```
 
 ---

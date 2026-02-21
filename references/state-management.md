@@ -122,7 +122,7 @@ export const FilterPanel = () => {
 コンポーネントをまたいだ状態で、シンプルな atom ベースの管理が適切な場合に使用。
 
 ```bash
-pnpm add jotai
+bun add jotai
 ```
 
 ### 基本的な使い方
@@ -182,7 +182,7 @@ export const asyncUserAtom = atom(async () => {
 複数のアクション、ミドルウェア、複雑な状態遷移が必要な場合に使用。
 
 ```bash
-pnpm add zustand
+bun add zustand
 ```
 
 ```typescript

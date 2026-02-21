@@ -96,7 +96,7 @@ v4 では JIT (Just-In-Time) コンパイルがデフォルトで有効。設定
 ## Next.js での Tailwind v4 セットアップ
 
 ```bash
-pnpm add tailwindcss @tailwindcss/postcss
+bun add tailwindcss @tailwindcss/postcss
 ```
 
 ```javascript
@@ -147,7 +147,7 @@ export default {
 ## Vite での Tailwind v4 セットアップ
 
 ```bash
-pnpm add tailwindcss @tailwindcss/vite
+bun add tailwindcss @tailwindcss/vite
 ```
 
 ```typescript
@@ -175,7 +175,7 @@ export default defineConfig({
 
 ```bash
 # shadcn/ui の初期化 (Tailwind v4 対応の最新版を使用)
-pnpm dlx shadcn@latest init
+bunx shadcn@latest init
 ```
 
 ```
@@ -188,15 +188,15 @@ pnpm dlx shadcn@latest init
 
 ```bash
 # 個別追加
-pnpm dlx shadcn@latest add button
-pnpm dlx shadcn@latest add input
-pnpm dlx shadcn@latest add form
-pnpm dlx shadcn@latest add card
-pnpm dlx shadcn@latest add dialog
-pnpm dlx shadcn@latest add toast
+bunx shadcn@latest add button
+bunx shadcn@latest add input
+bunx shadcn@latest add form
+bunx shadcn@latest add card
+bunx shadcn@latest add dialog
+bunx shadcn@latest add toast
 
 # よく使うセット
-pnpm dlx shadcn@latest add button input label form card dialog sheet toast
+bunx shadcn@latest add button input label form card dialog sheet toast
 ```
 
 ### components.json

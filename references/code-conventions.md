@@ -250,51 +250,57 @@ import { Chart } from "some-chart-library"; // window に依存
 ```json
 // biome.json
 {
-  "$schema": "https://biomejs.dev/schemas/1.9.4/schema.json",
+  "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": {
     "enabled": true,
     "clientKind": "git",
     "useIgnoreFile": true
   },
-  "organizeImports": {
-    "enabled": true
-  },
-  "linter": {
-    "enabled": true,
-    "rules": {
-      "recommended": true,
-      "correctness": {
-        "noUnusedVariables": "error",
-        "noUnusedImports": "error"
-      },
-      "suspicious": {
-        "noExplicitAny": "error"
-      },
-      "style": {
-        "noNonNullAssertion": "warn"
-      }
-    }
+  "files": {
+    "ignoreUnknown": false,
+    "includes": [
+      "**",
+      "!**/bun.lock",
+      "!**/.next",
+      "!**/dist",
+      "!**/node_modules",
+      "!**/components/ui",
+      "!**/src/gen"
+    ]
   },
   "formatter": {
     "enabled": true,
     "indentStyle": "space",
-    "indentWidth": 2,
-    "lineWidth": 100
+    "indentWidth": 2
+  },
+  "assist": { "actions": { "source": { "organizeImports": "off" } } },
+  "linter": {
+    "enabled": true,
+    "rules": {
+      "recommended": true,
+      "suspicious": {
+        "noUnknownAtRules": "off"
+      },
+      "style": {
+        "noUnusedTemplateLiteral": "off"
+      },
+      "performance": {
+        "noImgElement": "off"
+      },
+      "complexity": {
+        "noUselessFragments": "off"
+      }
+    }
   },
   "javascript": {
     "formatter": {
-      "quoteStyle": "double",
-      "trailingCommas": "all",
-      "semicolons": "always"
+      "quoteStyle": "double"
     }
   },
-  "files": {
-    "ignore": [
-      "node_modules",
-      ".next",
-      "dist",
-      "src/gen" // orval 等の自動生成ファイル
-    ]
+  "css": {
+    "parser": {
+      "tailwindDirectives": true
+    }
   }
 }
 ```
@@ -313,7 +319,7 @@ import { Chart } from "some-chart-library"; // window に依存
 ### oxlint + oxfmt (代替)
 
 ```bash
-pnpm add -D oxlint oxfmt
+bun add -d oxlint oxfmt
 ```
 
 ```json

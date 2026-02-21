@@ -211,8 +211,8 @@ export function UserActions({ userId }: { userId: string }) {
 ### セットアップ
 
 ```bash
-pnpm add @connectrpc/connect @connectrpc/connect-web @bufbuild/protobuf
-pnpm add -D @bufbuild/buf @connectrpc/protoc-gen-connect-es @bufbuild/protoc-gen-es
+bun add @connectrpc/connect @connectrpc/connect-web @bufbuild/protobuf
+bun add -d @bufbuild/buf @connectrpc/protoc-gen-connect-es @bufbuild/protoc-gen-es
 ```
 
 ### クライアント設定
@@ -285,7 +285,7 @@ export function UserProfileClient({ userId }: { userId: string }) {
 ### セットアップ
 
 ```bash
-pnpm add -D orval
+bun add -d orval
 ```
 
 ```typescript
@@ -311,7 +311,7 @@ export default defineConfig({
 
 ```bash
 # クライアント生成
-pnpm orval
+bunx orval
 ```
 
 ### 生成されたフックの使用

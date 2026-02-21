@@ -1,2 +1,2 @@
 # shadcn/ui コンポーネントはここに追加されます
-# pnpm dlx shadcn@latest add button input card dialog form
+# bunx shadcn@latest add button input card dialog form
