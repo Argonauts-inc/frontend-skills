@@ -88,6 +88,18 @@ Linting / Formatting ツールを教えてください:
 - **[code-conventions.md](references/code-conventions.md)**: TypeScript、命名規則、コンポーネント構成パターン
   - Biome の設定方法も含む
 
+### フォーム実装時
+- **[form-patterns.md](references/form-patterns.md)**: react-hook-form + zod + shadcn/ui `<Form>` を使ったフォーム実装
+  - 基本パターン、Server Action 連携、条件付きフィールド、useFieldArray、カスタムフック化
+
+### テスト実装時
+- **[testing.md](references/testing.md)**: Vitest + @testing-library/react を使ったテストパターン
+  - vitest.config.ts 設定、コンポーネントテスト、非同期処理、MSW モック、カスタムフックのテスト
+
+### 環境変数設定時
+- **[env-vars.md](references/env-vars.md)**: Next.js / Vite の環境変数管理
+  - .env ファイルの使い分け、NEXT_PUBLIC_ / VITE_ プレフィックス、zod バリデーション
+
 ### アンチパターン確認時
 - **[anti-patterns.md](references/anti-patterns.md)**: 実装前・レビュー時に NG パターンを確認する
 
